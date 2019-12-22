@@ -1,0 +1,16 @@
+#!/bin/sh
+
+clear
+
+echo -e "\tCREATE USER"
+read -p "Input number of user: " n
+read -p "Input user name: " name
+while [ $n -gt 0 ]
+ do
+   useradd $name$n
+   ech 123456 | passwd --stdin $name$n
+   n=$[ $n - 1 ]
+ done
+sleep(100)
+
+
